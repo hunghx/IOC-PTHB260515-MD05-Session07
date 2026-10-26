@@ -5,6 +5,11 @@ spring:
       active: dev
     config:
       import: "optional:configserver:http://localhost:8888"
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: admin
+      password: password123
 app:
   title: API Gateway
   description: A simple API Gateway implementation

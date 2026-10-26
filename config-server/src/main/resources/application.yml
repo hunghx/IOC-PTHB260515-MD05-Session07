@@ -11,5 +11,15 @@ spring:
             # nếu repo là private
 #            username:
 #            password:
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: admin
+      password: password123
 server:
   port: 8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh, refresh, health, info
