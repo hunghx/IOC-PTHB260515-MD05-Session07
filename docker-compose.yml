@@ -13,6 +13,24 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq
       # Nếu cần cấu hình nâng cao, bỏ comment dòng dưới:
       # - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: mydatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d mydatabase" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   rabbitmq_data:
+  postgres_data:
