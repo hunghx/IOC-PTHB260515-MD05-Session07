@@ -1,8 +1,17 @@
 spring:
     application:
         name: api-gateway
-
+    profiles:
+      active: dev
+    config:
+      import: "optional:configserver:http://localhost:8888"
 app:
   title: API Gateway
   description: A simple API Gateway implementation
   language: vietnamese
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
