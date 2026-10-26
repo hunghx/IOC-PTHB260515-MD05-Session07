@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: api-gateway
+
+app:
+  title: API Gateway
+  description: A simple API Gateway implementation
+  language: vietnamese
