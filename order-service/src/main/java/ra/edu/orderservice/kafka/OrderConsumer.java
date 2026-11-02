@@ -9,9 +9,12 @@ public class OrderConsumer {
             topics = "order-created",
             groupId = "order-service-group"
     )
-    public void handleMessageAfterOrderCreated(String message){
+    public void handleMessageAfterOrderCreated(OrderRequest order) {
         System.out.println("Consumer bắt đầu xử lý ....");
-        System.out.println("Message nhận được từ Kafka : "+ message);
+        System.out.println("Order ID: " + order.getOrderId());
+        System.out.println("Thời gian tạo : " + order.getCreatedAt());
+        System.out.println("Tổng tiền : "+order.getTotalAmount());
         System.out.println("Kết thúc xử lý !");
+
     }
 }

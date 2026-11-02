@@ -25,13 +25,13 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-kafka'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-config'
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     // Source: https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bus-amqp
 //    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
-    implementation 'org.springframework.boot:spring-boot-starter-kafka'
-    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka'
-    testImplementation 'org.springframework.kafka:spring-kafka-test'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
@@ -40,6 +40,10 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
+    // Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.0'
+    // Source: https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.0'
 }
 
 dependencyManagement {
